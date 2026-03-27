@@ -199,6 +199,9 @@ The auxiliary section is intended for dynamic data - typically usage tracking.
 #### 6.1.1 Field list (SLA-specific)
 {{ fields_table("aux_fields", "sla") }}
 
+#### 6.1.1 Field list (user data)
+{{ fields_table("aux_fields", "user_data") }}
+
 ### 6.2 Vendor-specific fields
 Vendor-specific fields not specified in this document are permitted for keys specified by the following table. Vendors may contact the specification authority to be assigned a key range for them to use.
 

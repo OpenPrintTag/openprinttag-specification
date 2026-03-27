@@ -209,6 +209,15 @@
                 },
                 "last_stir_time": {
                     "$ref": "field_types.schema.json#/definitions/timestamp"
+                },
+                "purchase_time": {
+                    "$ref": "field_types.schema.json#/definitions/timestamp"
+                },
+                "purchase_price": {
+                    "$ref": "field_types.schema.json#/definitions/number"
+                },
+                "purchase_currency": {
+                    "$ref": "field_types.schema.json#/definitions/string"
                 }
             },
             "unevaluatedProperties": false
