@@ -209,6 +209,9 @@
                 },
                 "last_stir_time": {
                     "$ref": "field_types.schema.json#/definitions/timestamp"
+                },
+                "storage_location": {
+                    "$ref": "field_types.schema.json#/definitions/string"
                 }
             },
             "unevaluatedProperties": false

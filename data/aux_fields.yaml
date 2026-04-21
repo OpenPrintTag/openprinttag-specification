@@ -31,3 +31,12 @@
   description:
     - Timestamp when the resin was last stirred.
     - Resins that have not been used for some time should be stirred before printing.
+
+- key: 4
+  name: storage_location
+  type: string
+  example: Shelf B3
+  max_length: 8
+  description:
+    - Free-form identifier for the physical storage location of the container.
+    - Intended for inventory management workflows (e.g. "Shelf B3", "DB2/S4").
