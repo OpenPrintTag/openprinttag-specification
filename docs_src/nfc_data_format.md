@@ -145,15 +145,15 @@ material_name = "PLA Prusa Galaxy Black"
 material_uuid = generate_uuid(material_namespace, brand_uuid.bytes, material_name.encode("utf-8"))
 print(f"material_uuid = {material_uuid}")
 
-material_package_namespace = "6f7d485e-db8d-4979-904e-a231cd6602b2"
+package_namespace = "6f7d485e-db8d-4979-904e-a231cd6602b2"
 gtin = "1234"
-material_package_uuid = generate_uuid(material_package_namespace, brand_uuid.bytes, gtin.encode("utf-8"))
-print(f"material_package_uuid = {material_package_uuid}")
+package_uuid = generate_uuid(package_namespace, brand_uuid.bytes, gtin.encode("utf-8"))
+print(f"package_uuid = {package_uuid}")
 
-material_package_instance_namespace = "31062f81-b5bd-4f86-a5f8-46367e841508"
+instance_namespace = "31062f81-b5bd-4f86-a5f8-46367e841508"
 nfc_tag_uid = b"\xE0\x04\x01\x08\x66\x2F\x6F\xBC"
-material_package_instance_uuid = generate_uuid(material_package_instance_namespace, nfc_tag_uid)
-print(f"material_package_instance_uuid = {material_package_instance_uuid}")
+instance_uuid = generate_uuid(instance_namespace, nfc_tag_uid)
+print(f"instance_uuid = {instance_uuid}")
 {% endpython %}
 
 ## 4. Meta section
