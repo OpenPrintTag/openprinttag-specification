@@ -120,7 +120,7 @@ UUIDs are derived from the brand-specific IDs using UUIDv5 with the `SHA1` hash,
 1. NFC tag UID is represented as a bytestream with the MSB being the first byte in the bytestream.
    * **Important:** Various apps/readers report these UIDs in various byte orders, and sometimes as hex strings instead of bytestreams. For NFCV, the UID MUST be a 8 bytes long bytestream with `0xE0` as the **first** byte (SLIX2 then follows with `0x04, 0x01`).
 
-| UID | Derviation formula | Namespace (`N`) |
+| UUID | Derviation formula | Namespace (`N`) |
 | --- | --- | --- |
 | `brand_uuid` | `N + brand_name` | `5269dfb7-1559-440a-85be-aba5f3eff2d2` |
 | `material_uuid` | `N + brand_uuid + material_name` | `616fc86d-7d99-4953-96c7-46d2836b9be9` |
