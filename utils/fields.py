@@ -46,6 +46,11 @@ class CompactFloat:
         num = float(data)
         return int(num) if num.is_integer() else round(num, CompactFloat.decimal_precision)
 
+    def encode_cbor(self, encoder: cbor2.CBOREncoder):
+        # Always encode floats canonically
+        # Noncanonically, floats would always be encoded in 8 B, which is a lot of wasted space
+        cbor2.CBOREncoder(encoder.fp, canonical=True).encode(self.value)
+
 
 # Represent a raw CBOR data that are to be encoded verbatim
 class RawCBORData:
@@ -53,6 +58,9 @@ class RawCBORData:
 
     def __init__(self, data: bytes):
         self.data = data
+
+    def encode_cbor(self, encoder: cbor2.CBOREncoder):
+        encoder.fp.write(self.data)
 
 
 class Field:
@@ -308,24 +316,12 @@ class Fields:
         for key, value in update_unknown_fields.items():
             result[RawCBORData(bytes.fromhex(key))] = RawCBORData(bytes.fromhex(value))
 
-        def default_enc(enc: cbor2.CBOREncoder, data: typing.Any):
-            if isinstance(data, CompactFloat):
-                # Always encode floats canonically
-                # Noncanonically, floats would always be encoded in 8 B, which is a lot of wasted space
-                cbor2.CBOREncoder(enc.fp, canonical=True).encode(data.value)
-
-            elif isinstance(data, RawCBORData):
-                enc.fp.write(data.data)
-
-            else:
-                raise RuntimeError(f"Unsupported type {type(data)} to encode")
-
         data_io = io.BytesIO()
         encoder = cbor2.CBOREncoder(
             data_io,
             canonical=config.canonical,
             indefinite_containers=config.indefinite_containers,
-            default=default_enc,
+            default=lambda enc, data: data.encode_cbor(enc),
         )
 
         encoder.encode(result)
