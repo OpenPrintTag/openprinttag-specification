@@ -195,6 +195,28 @@
     - The alpha channel can be left out, in which case the data should have 3 bytes instead of 4 and the color will be considered fully opaque.
     - If a material doesn't have a single primary color (for example rainbow or coextruded filaments), this field can be null.
 
+- key: 59
+  name: primary_color_lab
+  type: color_lab
+  unit: '[L*, a*, b*]'
+  example: '[53.24, 111.12, -27.3]'
+  description:
+    - "Color of a material in the device-independent CIE L*a*b* (CIELAB 1976) color space with reference white D65/2\xB0."
+    - If present, the value MUST be obtained by physical spectrometry measurement; it MUST NOT be approximated (for example from RGB).
+    - "`L*` is bound to [0, 100], `a*` and `b*` values are dimensionless and are typically between \xB1127, but can theoretically get in the \xB1150 range."
+
+- key: 60
+  name: primary_color_ral
+  type: string
+  unit: RAL code
+  max_length: 16
+  example: 270 30 20
+  description:
+    - RAL color identifier, without the "RAL" prefix.
+    - The value MUST correspond exactly to an official identifier (see https://www.ral-farben.de/en/all-ral-colours).
+    - If present, the physical material MUST match the referenced RAL swatch; it MUST NOT be approximated (for example from RGB/LAB).
+    - 'Examples of valid values: `3020`, `9005`, `1023`, `7016`, `270 30 20`, `190 50 35`, `530-1`, `850-M`, `P1 3020`.'
+
 - key: 20
   name: secondary_color_0
   type: color_rgba
@@ -485,4 +507,4 @@
   description:
     - Recommended drying time (at `drying_temperature`).
 
-# First unused key: 59
+# First unused key: 61

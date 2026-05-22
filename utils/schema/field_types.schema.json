@@ -42,6 +42,29 @@
             "type": "string",
             "description": "RGB(A) color in a standard hex notation '#RRGGBB(AA)'",
             "pattern": "^#[0-9a-f]{6}([0-9a-f]{2})?$"
+        },
+        "color_lab": {
+            "type": "array",
+            "prefixItems": [
+                {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                },
+                {
+                    "type": "number",
+                    "minimum": -150,
+                    "maximum": 150
+                },
+                {
+                    "type": "number",
+                    "minimum": -150,
+                    "maximum": 150
+                }
+            ],
+            "items": false,
+            "minItems": 3,
+            "maxItems": 3
         }
     }
 }

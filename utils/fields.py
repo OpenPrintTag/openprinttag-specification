@@ -197,6 +197,29 @@ class ColorRGBAField(Field):
         return bytes.fromhex(m.group(1))
 
 
+class LABCborData:
+    data: list
+
+    def __init__(self, data: list):
+        self.data = data
+
+    def encode_cbor(self, encoder: cbor2.CBOREncoder):
+        # Encode with definite container, it's smaller and the record is fixed size
+        cbor2.CBOREncoder(encoder.fp, canonical=True, indefinite_containers=False, default=encoder.default).encode(self.data)
+
+
+class ColorLABField(Field):
+    def decode(self, data):
+        assert type(data) is list
+        assert len(data) == 3
+        return [CompactFloat.decode(x) for x in data]
+
+    def encode(self, data):
+        assert type(data) is list
+        assert len(data) == 3
+        return LABCborData([CompactFloat(x) for x in data])
+
+
 class UUIDField(Field):
     def decode(self, data):
         return str(uuid.UUID(bytes=data))
@@ -214,6 +237,7 @@ field_types = {
     "enum_array": EnumArrayField,
     "timestamp": IntField,
     "color_rgba": ColorRGBAField,
+    "color_lab": ColorLABField,
     "uuid": UUIDField,
 }
 

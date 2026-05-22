@@ -93,6 +93,12 @@
                 "primary_color": {
                     "$ref": "field_types.schema.json#/definitions/color_rgba"
                 },
+                "primary_color_lab": {
+                    "$ref": "field_types.schema.json#/definitions/color_lab"
+                },
+                "primary_color_ral": {
+                    "$ref": "field_types.schema.json#/definitions/string"
+                },
                 "secondary_color_0": {
                     "$ref": "field_types.schema.json#/definitions/color_rgba"
                 },
