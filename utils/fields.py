@@ -41,6 +41,11 @@ class CompactFloat:
         else:
             self.value = num
 
+    @staticmethod
+    def decode(data):
+        num = float(data)
+        return int(num) if num.is_integer() else round(num, CompactFloat.decimal_precision)
+
 
 # Represent a raw CBOR data that are to be encoded verbatim
 class RawCBORData:
@@ -81,8 +86,7 @@ class IntField(Field):
 
 class NumberField(Field):
     def decode(self, data):
-        num = float(data)
-        return int(num) if num.is_integer() else round(num, CompactFloat.decimal_precision)
+        return CompactFloat.decode(data)
 
     def encode(self, data):
         return CompactFloat(data)
