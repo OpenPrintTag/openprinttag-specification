@@ -104,7 +104,7 @@ for file in tests_dir.glob("encode_decode/*_input.yaml"):
     fn_info = f"{fn_base}_info.yaml"
 
     init_args = ["--size=312", "--aux-region=32"]
-    info_args = ["--validate", "--show-all", "--show-raw-data", "--opt-check"]
+    info_args = ["--validate", "--show-all", "--opt-check"]
 
     with open(file, "r", encoding="utf-8") as f:
         yml = yaml.safe_load(f).get("test_config", {})
@@ -151,14 +151,14 @@ if True:
     utils_test(
         init_args=["--size=312", "--aux-region=32"],
         update_args=[f"{tests_dir}/specific/unknown_data.yaml", f"--config-file={tests_dir}/specific/unknown_config.yaml"],
-        info_args=["--show-all", "--show-raw-data"],
+        info_args=["--show-all"],
         expected_info_fn=f"{tests_dir}/specific/unknown_info_1.yaml",
         expected_data_fn=f"{tests_dir}/specific/unknown_data_1.bin",
     )
     utils_test(
         input_fn=f"{tests_dir}/specific/unknown_data_1.bin",
         update_args=[f"{tests_dir}/specific/unknown_update_data.yaml"],
-        info_args=["--show-all", "--show-raw-data"],
+        info_args=["--show-all"],
         expected_info_fn=f"{tests_dir}/specific/unknown_info_2.yaml",
         expected_data_fn=f"{tests_dir}/specific/unknown_data_2.bin",
     )

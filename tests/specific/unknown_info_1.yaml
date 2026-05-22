@@ -4,16 +4,20 @@ regions:
     absolute_offset: 42
     size: 4
     used_size: 4
+    field_used_size:
+      aux_region_offset: 3
   main:
     payload_offset: 4
     absolute_offset: 46
     size: 230
     used_size: 19
+    field_used_size: {}
   aux:
     payload_offset: 234
     absolute_offset: 276
     size: 35
     used_size: 1
+    field_used_size: {}
 root:
   cc_capacity: 312
   ndef_tlv_payload_start: 8
