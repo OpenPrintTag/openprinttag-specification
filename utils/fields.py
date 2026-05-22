@@ -32,10 +32,10 @@ class CompactFloat:
         if num.is_integer():
             self.value = int(num)
 
-        elif abs(num - numpy.float16(num)) < CompactFloat.required_precision:
+        elif abs(num - float(numpy.float16(num))) < CompactFloat.required_precision:
             self.value = float(numpy.float16(num))
 
-        elif abs(num - numpy.float32(num)) < CompactFloat.required_precision:
+        elif abs(num - float(numpy.float32(num))) < CompactFloat.required_precision:
             self.value = float(numpy.float32(num))
 
         else:
