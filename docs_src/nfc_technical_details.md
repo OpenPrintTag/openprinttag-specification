@@ -18,6 +18,10 @@
    - New keys can easily be introduced without breaking backwards compatibility.
    - Deprecated keys will never be reused.
    - If there would be substantial changes to the standard that would break backwards compatibility, a new MIME type will be used for the new format.
+1. The standard does not attempt to provide anti-counterfeiting or tag authenticity.
+   - A NFC tag can be cloned verbatim, or the contents of the container it is attached to can be changed, and no on-tag mechanism can prevent this.
+   - For these reasons the standard **does not define on-tag cryptographic signing**, which would cost scarce tag memory while providing marginal benefit.
+   - Additional authenticity measures (for example looking up the tag UID against a database) can be employed by the manufacturers, but are out of scope of this specification.
 
 ## 3. Tag operations
 The OpenPrintTag standard defines these types of operations with the tag:
