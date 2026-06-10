@@ -53,6 +53,11 @@
   name: Polyamide 12
   description: The most common Nylon for 3D printing. Strong, tough, with low moisture absorption. Great for functional parts.
 
+- key: 42
+  abbreviation: PA612
+  name: Polyamide 612
+  description: A semi-flexible Nylon with properties between PA6 and PA12. Offers good toughness and lower moisture absorption than PA6.
+
 - key: 11
   abbreviation: PA66
   name: Polyamide 66
