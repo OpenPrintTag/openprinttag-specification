@@ -68,6 +68,8 @@
       1. Positioned at the beginning of the auxiliary region.
       1. Intended for dynamic information, intended to be updated by the printers.
       1. SHALL have at least 16 B allocated if present. 32 B is recommended.
+      1. The root map of the section SHOULD be encoded as an indefinite-length container.
+
 1. Unused space in the sections (outside of the region CBOR) SHALL NOT contain any meaningful working data. It SHOULD be filled with zeroes on tag initialization, but there are no requirements on upkeeping that afterwards. Users CAN update the regions with smaller data, leaving remnants of the original data behind.
 
 ## 3. Specification common to all sections
@@ -81,7 +83,6 @@
       1. This applies to unknown items of `enum` and `enum_array` as well, provided that they are represented as integer values in the range of <0, 65535>.
    1. Keys can be deprecated at any time. Deprecated keys will never be reused.
    1. The keys MAY be arbitrarily ordered within the CBOR map. Implementations SHALL support unsorted (non-canonical) CBOR maps.
-1. CBOR maps and arrays SHOULD be encoded as indefinite containers.
 1. `enum` fields are encoded as an integer, according to the enum field mapping
 1. `enum_array` fields are encoded as CBOR arrays of integers, according to the field mapping
 1. `timestamp` fields are encoded as UNIX timestamp integers
