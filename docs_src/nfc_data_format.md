@@ -126,6 +126,7 @@ UUIDs are derived from the brand-specific IDs using UUIDv5 with the `SHA1` hash,
 | --- | --- | --- |
 | `brand_uuid` | `N + brand_name` | `5269dfb7-1559-440a-85be-aba5f3eff2d2` |
 | `material_uuid` | `N + brand_uuid + material_name` | `616fc86d-7d99-4953-96c7-46d2836b9be9` |
+| `container_uuid` | `N + brand_uuid + container_name` | `1b2624e1-4e98-4fcb-a69e-e3188b01df84` |
 | `package_uuid` | `N + brand_uuid + gtin` | `6f7d485e-db8d-4979-904e-a231cd6602b2` |
 | `instance_uuid` | `N + nfc_tag_uid` | `31062f81-b5bd-4f86-a5f8-46367e841508` |
 
@@ -146,6 +147,11 @@ material_namespace = "616fc86d-7d99-4953-96c7-46d2836b9be9"
 material_name = "PLA Prusa Galaxy Black"
 material_uuid = generate_uuid(material_namespace, brand_uuid.bytes, material_name.encode("utf-8"))
 print(f"material_uuid = {material_uuid}")
+
+container_namespace = "1b2624e1-4e98-4fcb-a69e-e3188b01df84"
+container_name = "Prusament 1kg spool"
+container_uuid = generate_uuid(container_namespace, brand_uuid.bytes, container_name.encode("utf-8"))
+print(f"container_uuid = {container_uuid}")
 
 package_namespace = "6f7d485e-db8d-4979-904e-a231cd6602b2"
 gtin = "1234"
