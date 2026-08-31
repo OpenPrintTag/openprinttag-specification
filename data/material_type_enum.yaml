@@ -2,31 +2,109 @@
   abbreviation: PLA
   name: Polylactic Acid
   description: Easy-to-print, biodegradable material. Ideal for beginners, prototypes, and models.
+  default_properties:
+    density: 1.24
+    min_print_temperature: 180
+    max_print_temperature: 220
+    preheat_temperature: 160
+    max_bed_temperature: 60
+    heatbreak_temperature: 45
+    chamber_temperature: 25
+    min_chamber_temperature: 15
+    max_chamber_temperature: 35
+    drying_temperature: 45
+    drying_time: 240
 
 - key: 1
   abbreviation: PETG
   name: Polyethylene Terephthalate Glycol
   description: Durable, strong, and temperature-resistant. Great for mechanical parts and functional prints.
+  default_properties:
+    density: 1.27
+    min_print_temperature: 220
+    max_print_temperature: 250
+    preheat_temperature: 170
+    min_bed_temperature: 60
+    max_bed_temperature: 80
+    heatbreak_temperature: 60
+    chamber_temperature: 30
+    min_chamber_temperature: 15
+    max_chamber_temperature: 50
+    drying_temperature: 65
+    drying_time: 360
 
 - key: 2
   abbreviation: TPU
   name: Thermoplastic Polyurethane
   description: A flexible, rubber-like material. Used for phone cases, vibration dampeners, and other soft parts.
+  default_properties:
+    density: 1.21
+    min_print_temperature: 210
+    max_print_temperature: 240
+    preheat_temperature: 160
+    min_bed_temperature: 20
+    max_bed_temperature: 60
+    heatbreak_temperature: 40
+    chamber_temperature: 25
+    min_chamber_temperature: 15
+    max_chamber_temperature: 40
+    drying_temperature: 60
+    drying_time: 360
+    min_nozzle_diameter: 400
 
 - key: 3
   abbreviation: ABS
   name: Acrylonitrile Butadiene Styrene
   description: Strong, durable, and heat-resistant plastic. Used for functional parts like car interiors and LEGOs. Requires a heated bed and enclosure.
+  default_properties:
+    density: 1.04
+    min_print_temperature: 230
+    max_print_temperature: 260
+    preheat_temperature: 180
+    min_bed_temperature: 90
+    max_bed_temperature: 110
+    heatbreak_temperature: 70
+    chamber_temperature: 50
+    min_chamber_temperature: 40
+    max_chamber_temperature: 80
+    drying_temperature: 80
+    drying_time: 240
 
 - key: 4
   abbreviation: ASA
   name: Acrylonitrile Styrene Acrylate
   description: Similar to ABS but with high UV and weather resistance, making it perfect for outdoor applications.
+  default_properties:
+    density: 1.07
+    min_print_temperature: 230
+    max_print_temperature: 260
+    preheat_temperature: 180
+    min_bed_temperature: 90
+    max_bed_temperature: 110
+    heatbreak_temperature: 70
+    chamber_temperature: 50
+    min_chamber_temperature: 40
+    max_chamber_temperature: 80
+    drying_temperature: 80
+    drying_time: 240
 
 - key: 5
   abbreviation: PC
   name: Polycarbonate
   description: Extremely strong, impact-resistant, and heat-resistant. Used for demanding engineering applications.
+  default_properties:
+    density: 1.20
+    min_print_temperature: 270
+    max_print_temperature: 310
+    preheat_temperature: 200
+    min_bed_temperature: 110
+    max_bed_temperature: 130
+    heatbreak_temperature: 100
+    chamber_temperature: 80
+    min_chamber_temperature: 60
+    max_chamber_temperature: 100
+    drying_temperature: 120
+    drying_time: 480
 
 - key: 6
   abbreviation: PCTG
@@ -87,6 +165,19 @@
   abbreviation: PET
   name: Polyethylene Terephthalate
   description: The same plastic used in water bottles. Strong and food-safe, but less common for printing than PETG.
+  default_properties:
+    density: 1.38
+    min_print_temperature: 255
+    max_print_temperature: 280
+    preheat_temperature: 190
+    min_bed_temperature: 70
+    max_bed_temperature: 90
+    heatbreak_temperature: 60
+    chamber_temperature: 40
+    min_chamber_temperature: 20
+    max_chamber_temperature: 60
+    drying_temperature: 65
+    drying_time: 360
 
 - key: 17
   abbreviation: PEI
@@ -102,6 +193,19 @@
   abbreviation: PVB
   name: Polyvinyl Butyral
   description: Easy to print and can be chemically smoothed with isopropyl alcohol for a glossy finish.
+  default_properties:
+    density: 1.10
+    min_print_temperature: 200
+    max_print_temperature: 225
+    preheat_temperature: 160
+    min_bed_temperature: 60
+    max_bed_temperature: 75
+    heatbreak_temperature: 50
+    chamber_temperature: 25
+    min_chamber_temperature: 15
+    max_chamber_temperature: 45
+    drying_temperature: 55
+    drying_time: 360
 
 - key: 20
   abbreviation: PVA
