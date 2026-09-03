@@ -194,7 +194,7 @@
   description:
     - Primary color of the material in the RGB(A) format, intended for UI purposes.
     - The alpha channel can be left out, in which case the data should have 3 bytes instead of 4 and the color will be considered fully opaque.
-    - If a material doesn't have a single primary color (for example rainbow or coextruded filaments), this field can be null.
+    - If a material doesn't have a single primary color (for example rainbow or coextruded filaments), this field SHOULD be omitted.
 
 - key: 59
   name: primary_color_lab
