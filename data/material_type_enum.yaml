@@ -50,7 +50,7 @@
     max_chamber_temperature: 40
     drying_temperature: 60
     drying_time: 360
-    min_nozzle_diameter: 400
+    min_nozzle_diameter: 0.4
 
 - key: 3
   abbreviation: ABS
