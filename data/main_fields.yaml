@@ -32,7 +32,7 @@
 
 - key: 4
   name: gtin
-  type: number
+  type: int
   required: recommended
   description: Global Trade Item Number.
 

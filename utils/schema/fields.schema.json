@@ -37,7 +37,7 @@
                     "$ref": "field_types.schema.json#/definitions/uuid"
                 },
                 "gtin": {
-                    "$ref": "field_types.schema.json#/definitions/number"
+                    "$ref": "field_types.schema.json#/definitions/int"
                 },
                 "brand_specific_instance_id": {
                     "$ref": "field_types.schema.json#/definitions/string"
