@@ -3,7 +3,7 @@
   type: uuid
   description:
     - Unique identifier of the package instance.
-    - If not specified, can be deduced from `brand_uuid` + NFC tag UID.
+    - If not specified, can be deduced from NFC tag UID.
     - See _UUID_ section for more details.
 
 - key: 1
