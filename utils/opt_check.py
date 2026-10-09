@@ -10,7 +10,7 @@ from record import Record
 from common import default_config_file
 
 
-def opt_check(rec: Record, tag_uid: bytes = None):
+def opt_check(rec: Record, tag_uid: bytes | None = None):
     warnings = list()
     errors = list()
     notes = list()
@@ -159,8 +159,12 @@ if __name__ == "__main__":
     else:
         data = bytearray(data)
 
+    uid = None
+    if args.uid is not None:
+        uid = bytes.fromhex(args.uid)
+
     record = Record(args.config_file, memoryview(data))
-    check_output = opt_check(record, args.uid)
+    check_output = opt_check(record, uid)
     yaml.dump(check_output, stream=sys.stdout)
 
     if len(check_output["errors"]) > 0:
