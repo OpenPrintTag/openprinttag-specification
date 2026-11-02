@@ -1,0 +1,9 @@
+# Multi-byte UTF-8 string exactly at the max_length byte limit
+test_config:
+  extra_required_fields: null
+data:
+  main:
+    material_class: FFF
+
+    # "Silk PLA+ Dual Color Gold & Silver": 25 characters, 63 UTF-8 bytes (string:63)
+    material_name: "シルクPLA+ デュアルカラー ゴールド＆シルバー"
