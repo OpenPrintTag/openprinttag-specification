@@ -1,0 +1,76 @@
+regions:
+  meta:
+    payload_offset: 0
+    absolute_offset: 42
+    size: 4
+    used_size: 4
+    field_used_size:
+      aux_region_offset: 3
+  main:
+    payload_offset: 4
+    absolute_offset: 46
+    size: 230
+    used_size: 70
+    field_used_size:
+      material_class: 2
+      material_name: 66
+  aux:
+    payload_offset: 234
+    absolute_offset: 276
+    size: 35
+    used_size: 1
+    field_used_size: {}
+root:
+  cc_capacity: 312
+  ndef_tlv_payload_start: 8
+  ndef_tlv_payload_size: 303
+  data_size: 312
+  payload_size: 269
+  overhead: 43
+  payload_used_size: 75
+  total_used_size: 118
+data:
+  meta:
+    aux_region_offset: 234
+  main:
+    material_class: FFF
+    material_name: "\u30B7\u30EB\u30AFPLA+ \u30C7\u30E5\u30A2\u30EB\u30AB\u30E9\u30FC\
+      \ \u30B4\u30FC\u30EB\u30C9\uFF06\u30B7\u30EB\u30D0\u30FC"
+  aux: {}
+raw_data:
+  meta: a10218ea
+  main: bf08000a783fe382b7e383abe382af504c412b20e38387e383a5e382a2e383abe382abe383a9e383bc20e382b4e383bce383abe38389efbc86e382b7e383abe38390e383bcff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  aux: a000000000000000000000000000000000000000000000000000000000000000000000
+uri: null
+validate:
+  warnings:
+  - Missing recommended field 'gtin'
+  - Missing recommended field 'material_type'
+  - Missing recommended field 'brand_name'
+  - Missing recommended field 'manufactured_date'
+  - Missing recommended field 'nominal_netto_full_weight'
+  - Missing recommended field 'actual_netto_full_weight'
+  - Missing recommended field 'nominal_full_length'
+  - Missing recommended field 'actual_full_length'
+  - Missing recommended field 'empty_container_weight'
+  - Missing recommended field 'primary_color'
+  - Missing recommended field 'tags'
+  - Missing recommended field 'density'
+  - Missing recommended field 'min_print_temperature'
+  - Missing recommended field 'max_print_temperature'
+  - Missing recommended field 'preheat_temperature'
+  - Missing recommended field 'min_bed_temperature'
+  - Missing recommended field 'max_bed_temperature'
+  errors: []
+opt_check:
+  warnings:
+  - Failed to deduce brand_uuid
+  - Failed to deduce material_uuid
+  - Failed to deduce package_uuid
+  errors: []
+  notes: []
+  uuids:
+    brand_uuid: null
+    material_uuid: null
+    package_uuid: null
+    instance_uuid: null

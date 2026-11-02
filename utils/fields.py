@@ -112,7 +112,11 @@ class StringField(Field):
 
     def encode(self, data):
         result = str(data)
-        assert len(result) <= self.max_len
+
+        # max_length is specified in bytes of the UTF-8 encoded string, not in characters
+        encoded_len = len(result.encode("utf-8"))
+        assert encoded_len <= self.max_len, f"String is {encoded_len} B long when UTF-8 encoded, max {self.max_len} B allowed"
+
         return result
 
 

@@ -146,6 +146,14 @@ utils_test(
     expect_success=False,
 )
 
+# Check that string max_length is enforced in UTF-8 bytes, not characters
+utils_test(
+    init_args=["--size=312", "--aux-region=32"],
+    update_args=["specific/string_too_long_utf8.yaml"],
+    info_args=["--show-all"],
+    expect_success=False,
+)
+
 # Test that we are able to handle unknown fields
 if True:
     utils_test(

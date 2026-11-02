@@ -1,0 +1,4 @@
+data:
+  main:
+    # "Silk PLA Tri-Color Gold & Silver & Copper": 29 characters, but 77 UTF-8 bytes (string:63)
+    material_name: "シルクPLA トリプルカラー ゴールド＆シルバー＆カッパー"
