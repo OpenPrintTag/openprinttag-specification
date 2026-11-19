@@ -74,6 +74,9 @@ class Field:
         self.key = int(config["key"])
         self.name = str(config["name"])
         self.required = config.get("required", False)
+        # Optional validation range, used only for generating the JSON schema
+        self.min = config.get("min")
+        self.max = config.get("max")
 
 
 class BoolField(Field):

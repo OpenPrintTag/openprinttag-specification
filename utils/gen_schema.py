@@ -13,6 +13,10 @@ for key in ["meta", "main", "aux"]:
     field: Field
     for field in fields.fields_by_key.values():
         props[field.name] = {"$ref": f"field_types.schema.json#/definitions/{field.type_name}"}
+        if field.min is not None:
+            props[field.name]["minimum"] = field.min
+        if field.max is not None:
+            props[field.name]["maximum"] = field.max
 
     properties[key] = {
         "type": "object",

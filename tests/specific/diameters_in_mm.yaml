@@ -1,0 +1,4 @@
+data:
+  main:
+    filament_diameter: 1.75
+    min_nozzle_diameter: 0.4

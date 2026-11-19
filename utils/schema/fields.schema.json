@@ -127,7 +127,9 @@
                     "$ref": "field_types.schema.json#/definitions/number"
                 },
                 "filament_diameter": {
-                    "$ref": "field_types.schema.json#/definitions/number"
+                    "$ref": "field_types.schema.json#/definitions/number",
+                    "minimum": 0.1,
+                    "maximum": 1000
                 },
                 "hardness_shore_a": {
                     "$ref": "field_types.schema.json#/definitions/int"
@@ -136,7 +138,9 @@
                     "$ref": "field_types.schema.json#/definitions/int"
                 },
                 "min_nozzle_diameter": {
-                    "$ref": "field_types.schema.json#/definitions/number"
+                    "$ref": "field_types.schema.json#/definitions/number",
+                    "minimum": 0.01,
+                    "maximum": 100
                 },
                 "min_print_temperature": {
                     "$ref": "field_types.schema.json#/definitions/int"
