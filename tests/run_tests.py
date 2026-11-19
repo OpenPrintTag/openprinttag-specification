@@ -146,6 +146,23 @@ utils_test(
     expect_success=False,
 )
 
+# Check that diameters given in the old unit (µm) are rejected by the range checks
+for fn in ["filament_diameter_in_um", "min_nozzle_diameter_in_um"]:
+    utils_test(
+        init_args=["--size=312", "--aux-region=32"],
+        update_args=[f"specific/{fn}.yaml"],
+        info_args=["--show-data"],
+        expect_success=False,
+    )
+
+# ... and that sane values in mm pass the same check
+utils_test(
+    init_args=["--size=312", "--aux-region=32"],
+    update_args=["specific/diameters_in_mm.yaml"],
+    info_args=["--show-data"],
+    expect_success=True,
+)
+
 # Test that we are able to handle unknown fields
 if True:
     utils_test(

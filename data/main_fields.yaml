@@ -290,6 +290,8 @@
   name: filament_diameter
   type: number
   unit: mm
+  min: 0.1
+  max: 1000
   example: 2.85
   category: fff
   description:
@@ -321,6 +323,8 @@
   type: number
   example: 0.4
   unit: mm
+  min: 0.01
+  max: 100
   category: fff
   description:
     - Filaments can contain particles that would clog smaller nozzles.
