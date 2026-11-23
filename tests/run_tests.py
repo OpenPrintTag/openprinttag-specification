@@ -147,7 +147,7 @@ utils_test(
 )
 
 # Check that diameters given in the old unit (µm) are rejected by the range checks
-for fn in ["filament_diameter_in_um", "min_nozzle_diameter_in_um"]:
+for fn in ["invalid_filament_diameter_in_um", "invalid_min_nozzle_diameter_in_um"]:
     utils_test(
         init_args=["--size=312", "--aux-region=32"],
         update_args=[f"specific/{fn}.yaml"],
